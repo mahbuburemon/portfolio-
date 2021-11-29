@@ -1,0 +1,15 @@
+.contact{
+    background-color: #191919;
+    display: flex;
+}
+.left{
+    flex: 1;
+    overflow: hidden;
+
+    
+}
+.right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}

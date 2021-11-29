@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './Home.css'
 import { init } from 'ityped'
 import AboutUs from '../AboutUs/AboutUs';
+import Contract from '../Contract/Contract';
 
 
 
@@ -28,7 +29,8 @@ const Home = () => {
                     <h3 > <span ref={textRef}></span>
                     </h3>
 
-                    <button type="button" class="btn btn-outline-dark border-2 border-danger">Downlode Resume</button>
+                    <a type="button" className="btn-resume btn " href="https://drive.google.com/file/d/1h8q_IJd87hsXHrYGeh8kbrU2bAcFFO3o/view?usp=sharing" >Downlode Resume</a>
+
 
                 </div>
 
@@ -36,6 +38,7 @@ const Home = () => {
             </div>
             <div>
                 <AboutUs></AboutUs>
+                <Contract></Contract>
             </div>
         </div>
     );
