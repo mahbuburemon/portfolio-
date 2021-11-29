@@ -1,0 +1,31 @@
+.home{
+    position: relative;
+    background: url(C:/programming-hero/scic/Portfolio/portfolio/src/images/home/h4.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 98vh;
+    
+}
+.main-info{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+.main-info h1{
+color: tomato;
+text-transform: uppercase;
+}
+
+.typed{
+    font-size: 2rem;
+    color: antiquewhite;
+}
