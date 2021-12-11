@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-
+import { HashLink } from 'react-router-hash-link';
 
 const NavBar = () => {
     return (
@@ -13,11 +13,11 @@ const NavBar = () => {
                     <Navbar.Toggle />
                     <Navbar.Collapse className="navbar justify-content-end " >
 
-                        <Nav.Link style={{ color: 'antiquewhite' }} to="/home">Home</Nav.Link>
-                        <Nav.Link style={{ color: 'antiquewhite' }} to="/about">About</Nav.Link>
-                        <Nav.Link style={{ color: 'antiquewhite' }} to="/skills">Skills</Nav.Link>
-                        <Nav.Link style={{ color: 'antiquewhite' }} to="/services">Services</Nav.Link>
-                        <Nav.Link style={{ color: 'antiquewhite' }} to="/contract">Contract</Nav.Link>
+                        <Nav.Link as={HashLink} style={{ color: 'antiquewhite' }} to="/home">Home</Nav.Link>
+                        <Nav.Link as={HashLink} style={{ color: 'antiquewhite' }} to="/about">About</Nav.Link>
+                        <Nav.Link as={HashLink} style={{ color: 'antiquewhite' }} to="/home#skills">Skills</Nav.Link>
+                        <Nav.Link as={HashLink} style={{ color: 'antiquewhite' }} to="/services">Services</Nav.Link>
+                        <Nav.Link as={HashLink} style={{ color: 'antiquewhite' }} to="/contract">Contract</Nav.Link>
 
 
                     </Navbar.Collapse>

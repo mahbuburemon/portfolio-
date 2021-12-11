@@ -3,6 +3,9 @@ import './Home.css'
 import { init } from 'ityped'
 import AboutUs from '../AboutUs/AboutUs';
 import Contract from '../Contract/Contract';
+import Skills from '../Skills/Skills';
+import Portfolio from '../Portfolio/Portfolio';
+import Services from '../Services/Services';
 
 
 
@@ -33,11 +36,18 @@ const Home = () => {
 
 
                 </div>
+                <div className="home-img">
+
+                </div>
 
 
             </div>
             <div>
                 <AboutUs></AboutUs>
+
+                <Skills></Skills>
+                <Services></Services>
+                <Portfolio></Portfolio>
                 <Contract></Contract>
             </div>
         </div>
