@@ -1,3 +1,51 @@
-.Nav.Link:hover{
-    background-color: aqua;
+/* Fancy Navbar Styling */
+.custom-navbar {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  padding: 0.7rem 1.2rem;
+}
+
+/* Brand Text */
+.brand-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease-in-out;
+}
+
+.brand-text:hover {
+  color: #00e6e6 !important;
+  text-shadow: 0 0 8px rgba(0, 230, 230, 0.8);
+}
+
+/* Nav Links */
+.nav-link-custom {
+  color: antiquewhite !important;
+  font-size: 1.1rem;
+  margin: 0 8px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link-custom:hover {
+  color: #00e6e6 !important;
+}
+
+/* Underline Hover Effect */
+.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  display: block;
+  margin-top: 4px;
+  left: 0;
+  background: #00e6e6;
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
 }

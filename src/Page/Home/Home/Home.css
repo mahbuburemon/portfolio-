@@ -1,39 +1,77 @@
-.home{
-    position: relative;
-    background: url(C:/programming-hero/scic/Portfolio/portfolio/src/images/home/h4.png) no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 98vh;
-    
-}
-.main-info{
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right:0;
-    bottom: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-
-}
-.main-info h1{
-color: tomato;
-text-transform: uppercase;
+/* Background */
+.home {
+  position: relative;
+  background: url("../../../images/home/h3.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.typed{
-    font-size: 2rem;
-    color: antiquewhite;
+/* Dark overlay for better text visibility */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1;
 }
-.btn-resume{
-    text-decoration: none;
-    background-image: linear-gradient( 45deg,rgb(228, 162, 40),tomato);
-    padding: 10px 20px;
-    border-radius: 20px;
-    color: whitesmoke;
-    font-weight: 500;
+
+/* Centered content */
+.main-info {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+/* Heading styles */
+.main-info h1 {
+  color: tomato;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.main-info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.highlighted {
+  color: #00e6e6;
+  text-shadow: 0 0 10px rgba(0, 230, 230, 0.8);
+}
+
+/* Typed text */
+.typed {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #f5f5f5;
+}
+
+/* Resume Button */
+.btn-resume {
+  display: inline-block;
+  text-decoration: none;
+  background-image: linear-gradient(45deg, rgb(228, 162, 40), tomato);
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: whitesmoke;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-resume:hover {
+  background-image: linear-gradient(45deg, tomato, #ff6600);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }

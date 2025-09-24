@@ -1,57 +1,77 @@
-import React, { useEffect, useRef } from 'react';
-import './Home.css'
-import { init } from 'ityped'
-import AboutUs from '../AboutUs/AboutUs';
-import Contract from '../Contract/Contract';
-import Skills from '../Skills/Skills';
-import Portfolio from '../Portfolio/Portfolio';
-import Services from '../Services/Services';
-
-
+import React, { useEffect, useRef } from "react";
+import "./Home.css";
+import { init } from "ityped";
+import { motion } from "framer-motion"; // 🚀 Animation
+import AboutUs from "../AboutUs/AboutUs";
+import Contract from "../Contract/Contract";
+import Skills from "../Skills/Skills";
+import Portfolio from "../Portfolio/Portfolio";
+import Services from "../Services/Services";
 
 const Home = () => {
-    const textRef = useRef();
+  const textRef = useRef();
 
-    useEffect(() => {
-        init(textRef.current, {
-            showCursor: true,
-            backDelay: 1500,
-            backSpeed: 60,
-            strings: ['MERN Stack Developer', 'UI & UX Designer']
+  useEffect(() => {
+    init(textRef.current, {
+      showCursor: true,
+      backDelay: 1500,
+      backSpeed: 60,
+      strings: ["Full Stack Developer", "UI & UX Designer", "Problem Solver"],
+    });
+  }, []);
 
+  return (
+    <div>
+      {/* Hero Section */}
+      <div className="home">
+        <div className="overlay"></div>
 
-        })
+        <div className="main-info">
+          <motion.h1
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            Hi There 👋
+          </motion.h1>
 
-    }, [])
-    return (
-        <div>
-            <div className="home p-4">
-                <div className="main-info">
-                    <h1>HI There</h1>
-                    <h2>I'M <span style={{ color: '#ffffff	' }}>Md Mahbubur Rahman</span></h2>
-                    <h3 > <span ref={textRef}></span>
-                    </h3>
+          <motion.h1
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.2 }}
+          >
+            I'M <span className="highlighted">Md Mahbubur Rahman</span>
+          </motion.h1>
 
-                    <a type="button" className="btn-resume btn " href="https://drive.google.com/file/d/1h8q_IJd87hsXHrYGeh8kbrU2bAcFFO3o/view?usp=sharing" >Downlode Resume</a>
+          <motion.h3
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.4 }}
+            className="typed"
+          >
+            <span ref={textRef}></span>
+          </motion.h3>
 
-
-                </div>
-                <div className="home-img">
-
-                </div>
-
-
-            </div>
-            <div>
-                <AboutUs></AboutUs>
-
-                <Skills></Skills>
-                <Services></Services>
-                <Portfolio></Portfolio>
-                <Contract></Contract>
-            </div>
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="btn-resume"
+            href="/Pdf/emon.pdf"
+            download="Mahbubur_Rahman_Resume.pdf"
+          >
+            Download Resume
+          </motion.a>
         </div>
-    );
+      </div>
+
+      {/* Other Sections */}
+      <AboutUs />
+      <Skills />
+      <Services />
+      <Portfolio />
+      <Contract />
+    </div>
+  );
 };
 
 export default Home;

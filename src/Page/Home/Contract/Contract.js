@@ -1,35 +1,73 @@
-import React from 'react';
-import picture from '../../../images/personal/circle2.png'
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
+import {
+  FaFacebookF,
+  FaWhatsapp,
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
+import "./Contract.css";
 
 const Contract = () => {
-    return (
-        <div>
-            <h2 className="m-4 p-3 justify-content-center">Contact Me</h2>
+  const form = useRef();
 
-            <div className="row gx-2 row-cols-md-2 row-cols-lg-2 row-cols-sm-1" id="contact">
+  const sendEmail = (e) => {
+    e.preventDefault();
 
+    emailjs
+      .sendForm(
+        "service_zh08mpr",   // 🔹 Replace with your Service ID
+        "template_x7btvt9",  // 🔹 Replace with your Template ID
+        form.current,
+        "9oMlpHzMwpojKBVXE"    // 🔹 Replace with your Public Key
+      )
+      .then(
+        (result) => {
+          alert("✅ Message sent successfully!");
+          e.target.reset(); // clear form
+        },
+        (error) => {
+          alert("❌ Failed to send. Try again.");
+        }
+      );
+  };
 
-                <div className="col col-md-12 col-lg-6 ">
-                    <form className="d-flex flex-column m-5 p-5 bg-dark gy-3">
-                        <input type="text" className="contact-name p-2  m-2" placeholder="Your Name" />
-                        <br />
-                        <input type="email" className="contact-email p-2 m-2" placeholder="Your Email" />
-                        <br />
-                        <input type="text" className="contact-sub p-2 m-2" placeholder="Subject" />
-                        <br />
-                        <textarea type="text" className="contact-sub p-2 m-2" placeholder="Message" />
-                        <br />
+  return (
+    <div className="contact-section" id="contact">
+      <h2 className="contact-title">Contact Me</h2>
 
-                        <button type="submit" className="border-2 border-danger rounded-2">Send</button>
-                    </form>
-                </div>
-                <div className="col p-2 col-md-12 col-lg-6">
-                    <img style={{ height: '550px', width: '90%' }} src={picture} alt="" />
-                </div>
+      {/* Social Icons */}
+      <div className="social-icons">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+        <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+      </div>
 
-            </div>
+      {/* Contact Form */}
+      <form ref={form} onSubmit={sendEmail} className="contact-form">
+        <div className="input-group">
+          <input type="text" name="name" required />
+          <label>Name</label>
         </div>
-    );
+        <div className="input-group">
+          <input type="email" name="email" required />
+          <label>Email</label>
+        </div>
+        <div className="input-group">
+          <input type="text" name="subject" required />
+          <label>Subject</label>
+        </div>
+        <div className="input-group">
+          <textarea rows="5" name="message" required></textarea>
+          <label>Message</label>
+        </div>
+        <button type="submit" className="btn-submit">Send Message</button>
+      </form>
+    </div>
+  );
 };
 
 export default Contract;
